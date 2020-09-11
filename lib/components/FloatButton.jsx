@@ -13,17 +13,17 @@ const FloatButton = styled.a`
   justify-content: center;
   position: fixed;
   right: 32px;
-  transform: ${props => (props.opened ? 'scale(0)' : 'scale(1)')};
+  transform: ${(props) => (props.opened ? 'scale(0)' : 'scale(1)')};
   transition: transform 0.3s ease;
   width: 56px;
-  z-index: 999;
+  z-index: ${({ zIndex }) => (zIndex ? zIndex : 999)};
 `;
 
 FloatButton.defaultProps = {
   theme: {
     headerBgColor: '#6e48aa',
-    headerFontColor: '#fff'
-  }
+    headerFontColor: '#fff',
+  },
 };
 
 export default FloatButton;

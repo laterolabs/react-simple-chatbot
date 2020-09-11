@@ -618,7 +618,8 @@ class ChatBot extends Component {
       style,
       submitButtonStyle,
       width,
-      height
+      height,
+      zIndex
     } = this.props;
 
     const header = headerComponent || (
@@ -656,6 +657,7 @@ class ChatBot extends Component {
           <FloatButton
             className="rsc-float-button"
             style={floatingStyle}
+            zIndex={zIndex}
             opened={opened}
             onClick={() => this.toggleChatBot(true)}
           >
@@ -670,6 +672,7 @@ class ChatBot extends Component {
           style={style}
           width={width}
           height={height}
+          zIndex={zIndex}
         >
           {!hideHeader && header}
           <Content
