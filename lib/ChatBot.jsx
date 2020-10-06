@@ -226,13 +226,14 @@ class ChatBot extends Component {
     const steps = {};
 
     for (let i = 0, len = previousSteps.length; i < len; i += 1) {
-      const { id, message, value, metadata } = previousSteps[i];
+      const { id, message, value, metadata, trigger } = previousSteps[i];
 
       steps[id] = {
         id,
         message,
         value,
-        metadata
+        metadata,
+        trigger
       };
     }
 
@@ -349,26 +350,28 @@ class ChatBot extends Component {
       const { previousSteps } = this.state;
 
       const renderedSteps = previousSteps.map(step => {
-        const { id, message, value, metadata } = step;
+        const { id, message, value, metadata, trigger } = step;
 
         return {
           id,
           message,
           value,
-          metadata
+          metadata,
+          trigger
         };
       });
 
       const steps = [];
 
       for (let i = 0, len = previousSteps.length; i < len; i += 1) {
-        const { id, message, value, metadata } = previousSteps[i];
+        const { id, message, value, metadata, trigger } = previousSteps[i];
 
         steps[id] = {
           id,
           message,
           value,
-          metadata
+          metadata,
+          trigger
         };
       }
 
