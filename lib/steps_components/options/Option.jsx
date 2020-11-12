@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { scale } from '../../common/animations';
+import { scaleUp } from '../../common/animations';
 
 const Option = styled.li`
-  animation: ${scale} 0.3s ease forwards;
+  animation: ${scaleUp} 0.3s ease forwards;
   cursor: pointer;
   display: inline-block;
   margin: 2px;

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { scale } from '../../common/animations';
+import { scaleUp } from '../../common/animations';
 import defaultTheme from '../../theme';
 
 const Bubble = styled.div`
-  animation: ${scale} 0.3s ease forwards;
+  animation: ${scaleUp} 0.3s ease forwards;
   background: ${props => (props.user ? props.theme.userBubbleColor : props.theme.botBubbleColor)};
   border-radius: ${props => {
     const { isFirst, isLast, user } = props;
@@ -39,7 +39,7 @@ const Bubble = styled.div`
   overflow: hidden;
   position: relative;
   padding: 12px;
-  transform: scale(0);
+  transform: ${() => 'scale(1)'};
   transform-origin: ${props => {
     const { isFirst, user } = props;
 

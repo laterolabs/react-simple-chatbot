@@ -7,7 +7,7 @@ const loading = keyframes`
   100% { opacity: .2; }
 `;
 
-const scale = keyframes`
+const scaleUp = keyframes`
   100% { transform: scale(1); }
 `;
 
@@ -22,4 +22,4 @@ const pulse = color => keyframes`
   100% { box-shadow: 0 0 0 0 ${rgba(color, 0)}; }
 `;
 
-export { loading, scale, invalidInput, pulse };
+export { loading, scaleUp, invalidInput, pulse };
