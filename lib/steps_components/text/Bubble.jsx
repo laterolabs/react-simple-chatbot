@@ -3,9 +3,8 @@ import { scale } from '../../common/animations';
 import defaultTheme from '../../theme';
 
 const Bubble = styled.div`
-  animation: ${scale} 0.3s ease forwards;
-  background: ${props => (props.user ? props.theme.userBubbleColor : props.theme.botBubbleColor)};
-  border-radius: ${props => {
+  background: ${(props) => (props.user ? props.theme.userBubbleColor : props.theme.botBubbleColor)};
+  border-radius: ${(props) => {
     const { isFirst, isLast, user } = props;
 
     if (!isFirst && !isLast) {
@@ -19,11 +18,11 @@ const Bubble = styled.div`
     return props.user ? '18px 18px 0 18px' : '18px 18px 18px 0';
   }};
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
-  color: ${props => (props.user ? props.theme.userFontColor : props.theme.botFontColor)};
+  color: ${(props) => (props.user ? props.theme.userFontColor : props.theme.botFontColor)};
   display: inline-block;
   font-size: 14px;
   max-width: 50%;
-  margin: ${props => {
+  margin: ${(props) => {
     const { isFirst, showAvatar, user } = props;
 
     if (!isFirst && showAvatar) {
@@ -39,8 +38,8 @@ const Bubble = styled.div`
   overflow: hidden;
   position: relative;
   padding: 12px;
-  transform: scale(0);
-  transform-origin: ${props => {
+  transform: scale(1);
+  transform-origin: ${(props) => {
     const { isFirst, user } = props;
 
     if (isFirst) {
@@ -52,7 +51,7 @@ const Bubble = styled.div`
 `;
 
 Bubble.defaultProps = {
-  theme: defaultTheme
+  theme: defaultTheme,
 };
 
 export default Bubble;
