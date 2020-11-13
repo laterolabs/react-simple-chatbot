@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-import { scaleUp } from '../../common/animations';
 import defaultTheme from '../../theme';
 
 const Bubble = styled.div`
-  animation: ${scaleUp} 0.3s ease forwards;
   background: ${props => (props.user ? props.theme.userBubbleColor : props.theme.botBubbleColor)};
   border-radius: ${props => {
     const { isFirst, isLast, user } = props;
